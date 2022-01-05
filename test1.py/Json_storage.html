@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Store and retrieve data from local storage. </h2>
+    <p id="demo"></p>
+
+    <script>
+        var myObj, myJSON, text, obj;
+
+        //storing data:
+        myObj ={
+            name : "John Doe",
+            age : 35,
+            city: "Collingwood"
+        };
+        myJSON = JSON.stringify(myObj);
+        localStorage.setItem("testJSON", myJSON);
+
+        //Retrieving data:
+        text = localStorage.getItem("testJSON");
+        obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML = obj.name;
+    </script>
+</body>
+</html>
